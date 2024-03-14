@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Whatsapp</title>
+    <!-- ------------------CSS-------------------- -->
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+        background-image: url('https://images.pexels.com/photos/2422292/pexels-photo-2422292.jpeg?auto=compress&cs=tinysrgb&w=400');
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-weight: 600;
+        flex-direction: column;
+        color: aliceblue;
+    }
+
+    input {
+        padding: 15px;
+        border: none;
+        border-radius: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow effect */
+        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+        outline: none; /* Remove default input focus outline */
+        width: 300px;
+        max-width: 80%;
+        font-size: 18px;
+        color: #333;
+    }
+
+    /* Styling for the input placeholder */
+    input::placeholder {
+        color: #999;
+    }
+
+    /* Styling for input on focus */
+    input:focus {
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* Modify shadow on focus */
+    }
+
+    p{
+        font-weight: 100;
+        text-align: center;
+    }
+
+    button {
+        padding: 15px;
+        border: none;
+        border-radius: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow effect */
+        background-color: rgba(0, 255, 10, 0.9); /* Semi-transparent white background */
+        outline: none; /* Remove default input focus outline */
+        width: 300px;
+        max-width: 80%;
+        font-size: 18px;
+        color: #333;
+        margin-top: 10px;
+    }
+
+    #copyright{
+        padding-top: 80px;
+        opacity: 30%;
+    }
+    </style>
+</head>
+<!-- -----------------HTML------------------ -->
+<body>
+    <h1>Direct Whatsapp</h1>
+    <input type="number" placeholder="Enter Phone No..." id="phoneNumber">
+    <button onclick="sendButton()">Send</button>
+    <p>Direct whatsapp is a service which allows users to chat Directly.
+        without saving the Phone number.</p>
+    <p id="copyright">&#169;created by ayushsonone07</p>
+</body>
+
+<!-- --------------JavaScript----------------- -->
+<script>
+    function sendButton(){
+        const PhoneNumber = document.querySelector("#phoneNumber");
+        const Number = PhoneNumber.value;
+        const Link = `https://api.whatsapp.com/send/?phone=%2B91${Number}&text&type=phone_number&app_absent=0`;
+        window.location.replace(Link);
+    }
+</script>
+</html>
